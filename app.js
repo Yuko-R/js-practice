@@ -72,14 +72,27 @@ console.log('----------------3. 数を数える----------------');
  * ※繰り返し文とif文を使用します。
  */
 
-let res = 0;
 let numbers = [1, 3, 4, 5, 8, 9, 3, 3, 3];
 
+// let res = 個数を数えた数を格納しておく変数
+let res = 0;
 for (let three of numbers) {
+	// 3を見つけた時
 	if(three === 3){
+		// １つ見つけた、と記録しておく
+		// res++ は　res = res +1; と同じ意味
 		res++;
 	}
 }
+console.log(res);
+
+// 別ver
+for (let i = 0; i < 9; i++){
+	if (numbers[i] === 3){
+		res = res + 1;
+	}
+}
+console.log(res);
 
 console.log('----------------4. 3倍した数を表示する----------------');
 /**
@@ -113,6 +126,22 @@ console.log('----------------5. FizzBuzz----------------');
  	}
  }
 
+
+// 別ver
+let moji = '';
+for (let i = 1; i <= 100; i++){
+	if (i % 3 ===0){
+		moji = 'Fizz';
+	}
+	if (i % 5 === 0){
+		if (moji != 'Fizz'){
+			moji = '';
+		}
+		moji = moji + 'Buzz';
+	}
+	console.log(moji);
+}
+
 console.log('----------------6.九九----------------');
 /**
  * 九九を表示するプログラムを書いてください。
@@ -121,7 +150,8 @@ console.log('----------------6.九九----------------');
  for (let i = 1; i <= 9; i++) {
  	for (let j = 1; j <= 9; j++) {
  		let res = i * j;
- 		console.log('res');
+ 		 console.log('res');
+ 		 // console.log(`${i}×${j}=${res}`);
  	}
  }
 
@@ -156,7 +186,7 @@ console.log('----------------1. 女湯問題----------------');
  if (customer['gender'] === 'female') {
  	console.log('入れます');
  } else {
- 	if (customer['age'] <= 4) {
+ 	if (customer['age'] <= 3) {
  		console.log('入れない');
  	} else {
  		console.log('入れない');
