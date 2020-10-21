@@ -18,6 +18,20 @@ if (i % 2 === 0){
 	console.log('奇数です');
 }
 
+
+// 別ver.
+// Switch文
+// 真偽値（bool型:true,false）
+
+switch (i % 2 === 0){
+	case true:
+	    console.log(i + 'は偶数です');
+	    break;
+	default:
+	    console.log(i + 'は奇数です');
+	    break;
+}
+
 console.log('----------------2. 合格判定----------------');
 /**
  * 英語と数学の点数がそれぞれ60点以上かつ、
@@ -35,6 +49,21 @@ if (math >= 60 && english >= 60 && total >= 140) {
 	console.log('不合格');	
 }
 
+
+// 別ver.
+if (math >= 60){
+	if (english >= 60){
+		if (total >= 140){
+			console.log('合格');
+		} else {
+			console.log('不合格');
+		}
+	} else {
+		console.log('不合格');
+	} 
+	} else {
+        conslole.log('不合格');
+}
 
 console.log('----------------3. 数を数える----------------');
 /**
@@ -141,3 +170,16 @@ console.log('----------------2. 素数を表示するプログラム------------
  * 素数とは1とその数以外では割り切れない数です。
  * 言い方をかえると約数が2つしかない数です。
  */
+
+ for (let i = 2; i < 100; i++) {
+  for (let j = 2; j <= i; j++) {
+    if (i % j === 0 && j < i) {
+      break;
+    } 
+
+    if (i === j) {
+      console.log(i);
+    }
+  }
+}
+
